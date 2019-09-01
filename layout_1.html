@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .main {
+            width: 90%;
+            margin: 0 auto;
+            background-color:red;
+        }
+        .main::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .leftside {
+            width: 30%;
+            height: 400px;
+            background-color: green;
+            float: left;
+            padding: 20px;
+        }
+        .rightside {
+            width: 70%;
+            background-color: purple;
+            padding: 20px;
+            float: left;
+        }
+        .footer {
+            width: 90%;
+            margin: 0 auto;
+            background-color:yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="leftside">
+            <h3>this is menu</h3>
+        </div>
+
+        <div class="rightside">
+            <p>main content</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>copyright &copy; 2019 babor</p>
+    </div>
+
+</body>
+</html>
