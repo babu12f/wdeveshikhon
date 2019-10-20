@@ -18,6 +18,7 @@
                         <th>@id</th>
                         <th>name</th>
                         <th>father name</th>
+                        <th></th>
                     </tr>
 
                     <?php
@@ -37,6 +38,10 @@
                                     <td> <?php echo $row['id'];  ?> </td>
                                     <td> <?php echo $row['name'];  ?> </td>
                                     <td> <?php echo $row['father_name'];  ?> </td>
+                                    <td> 
+                                        <a href="editpeople.php?id=<?php echo $row['id']; ?>" class="btn btn-info btn-sm">Edit</a> | 
+                                        <a href="deletepeople.php?person_id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a> 
+                                    </td>
                                 </tr>
                     <?php
                             }
