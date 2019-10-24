@@ -6,6 +6,7 @@
     <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+    <?php include('nav_bar.php'); ?>
     <div class="container">
         <div class="card">
             <div class="card-header">
@@ -13,6 +14,16 @@
             </div>
 
             <div class="card-body">
+
+                <?php if(isset($_GET['message'])) { ?>
+
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $_GET['message']; ?>
+                    </div>
+                
+                <?php } ?>
+                
+
                 <form action="insert_person_info.php" method="post">
                     <div class="form-group">
                         <label>Name</label>

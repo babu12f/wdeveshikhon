@@ -5,6 +5,8 @@
     $password = "";
     $db_name = "wdev_eshikhon";
 
+    $number = 10;
+
     $connection = mysqli_connect($server, $user_name, $password, $db_name);
 
     if( !$connection ){

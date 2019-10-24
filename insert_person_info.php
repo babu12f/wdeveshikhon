@@ -1,5 +1,5 @@
 <?php
-
+    require('db_connect.php');
     if(isset($_POST['submit']))
     {
         $name = $_POST['person_name'];
@@ -17,7 +17,7 @@
         $rs = mysqli_query($connection, $query);
 
         if($rs){
-            header("Location: people.php");
+            header("Location: people.php?message=Your Data Added Successfully");
         }else{
             echo "error";
         }

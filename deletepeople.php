@@ -7,12 +7,9 @@
 
     $rs = mysqli_query($connection, $sql);
 
-    if($rs)
-    {
-        header('Location: peoplelist.php');
-    }
-    else
-    {
+    if($rs){
+        header('Location: peoplelist.php?message=Your Data Deleted Successfully');
+    }else{
         echo "Error";
     }
 
