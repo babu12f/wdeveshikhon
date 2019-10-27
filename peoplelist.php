@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php  require('session_manager.php'); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

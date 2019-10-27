@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php
+   require('session_manager.php');
+
+    if( !isset($_SESSION['user_id'])) {
+        header('Location: login.php?emsg=You have no access please Login !');
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
