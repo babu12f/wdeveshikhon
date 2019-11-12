@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Class 1</title>
+</head>
+<body>
+
+    <input type="text" id="num1"><br>
+    <input type="text" id="num2"><br>
+    <p id="sum"></p>
+    <button onclick="showSum()">Sum</button>
+    
+    <script>
+        function showSum(){
+            var a = document.getElementById('num1').value;
+            var b = document.getElementById('num2').value;
+
+            a = parseInt(a);
+            b = parseInt(b);
+
+            document.getElementById('sum').innerHTML = a + b;
+        }
+    </script>
+</body>
+</html>
