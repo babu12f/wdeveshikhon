@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascript Class 2</title>
+</head>
+<body>
+    <!-- <input type="button" value="click me" id="input1"><br> -->
+
+    <input type="text" id="num1"><br>
+    <input type="text" id="num2"><br>
+
+    <select name="" id="sl1">
+        <option value="">select option</option>
+        <option value="1">Add</option>
+        <option value="2">Sub</option>
+        <option value="3">Multiply</option>
+        <option value="4">Divition</option>
+    </select>
+    <p id="rs"></p>
+
+
+<script>
+    // function clickButton1(){
+    //     console.log("button1 Click");
+    // }
+    // function mouseover1(){
+    //     console.log("mouseover button");
+    // }
+    // function fcInput(){
+    //     console.log('on focus calles');
+    // }
+    // function blInput(){
+    //     console.log("blur called");
+    // }
+
+    function cngInput(){
+        var selected_option = this.value;
+
+        var n1 = document.getElementById('num1');
+        var n2 = document.getElementById('num2');
+        var rs = document.getElementById('rs');
+
+        n1 = parseInt(n1.value);
+        n2 = parseInt(n2.value);
+
+        if(selected_option == 1){
+            rs.innerHTML = n1 + n2;
+        }
+        else if(selected_option == 2){
+            rs.innerHTML = n1 - n2;
+        }
+        else if(selected_option == 3){
+            rs.innerHTML = n1 * n2;
+        }
+        else if(selected_option == 4){
+            rs.innerHTML = n1 / n2;
+        }
+
+    }
+
+    var element2 = document.getElementById('sl1');
+    element2.addEventListener("change", cngInput);
+</script>
+</body>
+</html>
