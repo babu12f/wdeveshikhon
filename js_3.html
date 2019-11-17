@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascript clss 3</title>
+</head>
+<body>
+
+    <div id="d1">hello
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio blanditiis sunt voluptatem ipsum enim nesciunt, placeat, assumenda error excepturi illum autem similique? Facere saepe porro delectus praesentium, eveniet aliquam. Quis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolore atque, nam libero perspiciatis fugiat alias sed dolores repudiandae repellendus hic natus aspernatur eos sit quidem non aliquid labore dolor architecto tempora, mollitia distinctio quibusdam? Magnam nam quam perspiciatis est blanditiis accusantium ex dolorem laboriosam, quibusdam ipsum quasi. Vero ea deleniti dolor ipsam accusantium qui cumque voluptatem dolorum assumenda totam suscipit perspiciatis vel veritatis expedita dicta, consequatur ex doloribus eum eaque dignissimos atque, placeat voluptatibus saepe voluptate. Aspernatur accusamus corrupti pariatur temporibus velit nemo magni autem vero quisquam. Fugit perspiciatis iusto obcaecati aliquid illum similique ipsa illo consequatur facilis at.
+    </div>
+    <p class="par" id="par">paragraph 1</p>
+    <p class="par" id="par">paragraph 2</p>
+    <p class="par" id="par">paragraph 3</p>
+    <p class="par" id="par">paragraph 4</p>
+
+    <button id="mybtn">click</button>
+
+    <form id="myform">
+        <input type="text" name="first_name"><br>
+        <input type="text" name="last_name"><br>
+        <input type="password" name="password"><br>
+        <input type="submit" value="submit">
+    </form>
+    
+    <script src="./js/jquery.js"></script>
+
+    <script>
+        $(function(){
+
+            //console.log($('#d1').html());
+
+            //$('p').css('background', "green");
+
+            $('p').click(function(e){
+                $('p').css('background', 'white');
+                $(this).css('background', 'yellow');
+            });
+
+            $('#mybtn').click(function(e){
+                $('#d1').slideToggle(2000);
+            });
+
+            $('#myform').submit(function(e){
+                e.preventDefault();
+
+                var first_name = $('input[name="first_name"]').val();
+                //var form_data = $('#myform').serialize();
+                console.log(first_name);
+            });
+
+        });
+    </script>
+</body>
+</html>

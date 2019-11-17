@@ -12,23 +12,39 @@
         
     </div>
     
-    <button onclick="getAboutPage()">get about page</button>
+    <button onclick="getAboutPage1()">get about page</button>
     
+    <script src="./js/jquery.js"></script>
     <script>
-        function getAboutPage(){
-            var element = document.getElementById('about_content');
+        // function getAboutPage(){
+        //     var element = document.getElementById('about_content');
 
-            // ajax = asynchronous javascript and xml
+        //     // ajax = asynchronous javascript and xml
 
-            var xhttp = new XMLHttpRequest();
+        //     var xhttp = new XMLHttpRequest();
 
-            xhttp.onreadystatechange = function(){
-                if(this.readyState == 4 && this.status == 200){
-                    element.innerHTML = this.responseText;
+        //     xhttp.onreadystatechange = function(){
+        //         if(this.readyState == 4 && this.status == 200){
+        //             element.innerHTML = this.responseText;
+        //         }
+        //     };
+        //     xhttp.open("GET", "get_about.php", true);
+        //     xhttp.send();
+        // }
+
+        function getAboutPage1(){
+            $.ajax({
+                url: 'get_about.php',
+                type: 'GET',
+                success: myfunc,
+                error: function(response){
+                    console.log("erroe");
                 }
-            };
-            xhttp.open("GET", "get_about.php", true);
-            xhttp.send();
+            });
+        }
+
+        function myfunc(response){
+            $('#about_content').html(response);
         }
     </script>
 </body>
