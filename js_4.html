@@ -45,8 +45,6 @@
             </tbody>
         </table>
 
-        <button class="btn btn-info mybtn">click</button>
-
     </div>
 
     <script src="./js/jquery.js"></script>
@@ -97,14 +95,9 @@
         //     alert('del');
         // });
 
-        // 1. approach
-        // $('.mybtn').click(function(){
-        //     alert('ckliuck');
-        // });
-
-        // 2. approach
-        $('body').on('click', '.mybtn', function(){
-            alert('dfas');
+        $('body').on('click', '.pdel', function(e){
+            //$(this).parent().parent().fadeOut();
+            $(this).closest('tr').fadeOut();
         });
 
 
