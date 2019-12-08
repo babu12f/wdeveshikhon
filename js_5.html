@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <h2>   javascript class 5 </h2>
+
+    <table class="table" id="mytable">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>address</th>
+        </tr>
+    </table>
+
+    <div class="container">
+        <h2 class="btn btn-success" id="col">up</h2>
+        <h2 class="btn btn-success" id="col-d">dowm</h2>
+        <div id="col-1" style="width: 200px; background: green;">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quae blanditiis vero consequatur eaque unde nesciunt officia recusandae odit odio facilis culpa, laudantium hic dolorum eum aperiam aspernatur facere qui alias. Numquam dolorem aut voluptatibus sequi cum soluta nostrum ut animi obcaecati eius, commodi unde hic ab molestiae adipisci incidunt consequatur officiis aspernatur eum quaerat voluptates. Expedita saepe incidunt vitae quo nobis, veniam suscipit quod perspiciatis sit modi quia illum ipsam et similique quaerat sapiente neque! Deleniti commodi modi blanditiis beatae consequatur sint facilis provident fugiat, dignissimos perspiciatis itaque porro explicabo obcaecati recusandae libero sed optio? Natus alias magni molestias!</p>
+        </div>
+    </div>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        // json => Javascript Object Notation
+        var person_1 = { name: 'jahid', age:30, address: 'Dhaka'};
+        var person_2 = { name: 'rayhan', age:40, address: 'pabna'};
+        var person_3 = { name: 'milon', age:23, address: 'josor'};
+
+        var person_list = [ 
+            { name: 'jahid', age:30, address: 'Dhaka'},
+            { name: 'rayhan', age:40, address: 'pabna'},
+            { name: 'milon', age:23, address: 'josor'},
+        ];
+
+        for(var i=0; i<person_list.length; i++)
+        {
+            // $('#mytable').append('<tr><td>'+person_list[i].name+'</td><td>'+person_list[i].age+'</td><td>'+person_list[i].address+'</td></tr>');
+
+
+            $('#mytable').append(`
+            <tr>
+                <td>${person_list[i].name}</td>
+                <td>${person_list[i].age}</td>
+                <td>${person_list[i].address}</td>
+            </tr>
+            `);
+
+        }
+        
+    </script>
+
+    <script>
+        $('#col').click(function(){
+            // $('#col-1').slideUp();
+            // $('#col-1').fadeOut();
+            $('#col-1').animate({
+                width: "400px"
+            }, 100);
+        });
+        $('#col-d').click(function(){
+            // $('#col-1').slideDown();
+            // $('#col-1').fadeIn();
+            $('#col-1').animate({
+                width: "200px"
+            });
+        });
+    </script>
+</body>
+</html>
