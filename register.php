@@ -2,6 +2,7 @@
 <?php
     require('session_manager.php');
     require('db_connect.php');
+    require('send_verify_mail.php');
 
     if( $_SERVER['REQUEST_METHOD'] == "POST" )
     {
@@ -15,7 +16,19 @@
 
             $rs = mysqli_query($connection, $sql);
 
-            if($rs)
+            $user_id = mysqli_insert_id($connection);
+           
+            $token = uniqid().$email;
+
+            $sql_2 = "insert into verify_email (user_id, token) values ('$user_id', '$token')";
+
+            $rs2 = mysqli_query($connection, $sql_2);
+
+            $body = "<a href='http://localhost/wdeveshikhon/verify_email.php?token=$token&user_id=$user_id'>Click Heare to Verify</a>";
+
+            $mail_send = send_verify_mail($email, "Verify Your Email Address", $body);
+
+            if($mail_send)
             {
                 header('Location: login.php?message=You Register Successfully You Can Login Now');
             }
