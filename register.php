@@ -9,6 +9,7 @@
         $name = $_POST['user_name'];
         $email = $_POST['user_email'];
         $password = $_POST['user_password'];
+        $password = md5($password);
 
         if($name != "" && $email != "" && $password != "")
         {

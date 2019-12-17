@@ -8,8 +8,6 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-
-
 function send_verify_mail($to, $subject, $body)
 {
     $mail = new PHPMailer(true);
