@@ -18,6 +18,9 @@
       <li class="nav-item">
         <a class="nav-link" href="about.php">About</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="file.php">File Upload</a>
+      </li>
 
       <?php if( !isset($_SESSION['user_id'])): ?>
         <li class="nav-item">
